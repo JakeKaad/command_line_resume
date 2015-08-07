@@ -11,8 +11,8 @@ Right now my own personal information is hardcoded in as a concept. I will move 
 the application customizable. 
 
 ## Todo:
-move contact information to text file
-move skills to text file
-custom options like text color, emoji support, custom application to run after resume runs. 
+* move contact information to text file
+* move skills to text file
+* custom options like text color, emoji support, custom application to run after resume runs. 
 
 

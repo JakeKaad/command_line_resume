@@ -12,9 +12,10 @@ class Contact
     @description = description
   end
 
-  def display
+  def display(voice)
     puts "#{name}, #{job}"
     puts description
+    Talks.say name + " " + job + " " + description, voice: voice if voice
     print CONTACTS.values.last[:name] == name ? "" : "\n"
     sleep 1
   end

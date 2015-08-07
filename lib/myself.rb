@@ -10,15 +10,15 @@ class Myself
     @references = Contact.get_contacts
   end
 
-  def pretty_skills
+  def pretty_skills(voice)
     @experience.skills.keys.each do |skill_type|
-      Experience.show_off(skill_type)
+      Experience.show_off(skill_type, voice)
     end
   end
 
-  def pretty_references
+  def pretty_references(voice)
     references.each do |reference|
-      reference.display
+      reference.display(voice)
     end
   end
 

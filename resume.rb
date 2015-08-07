@@ -2,7 +2,7 @@ require "./lib/myself"
 require "./lib/experience"
 require "./lib/contact"
 
-class MyResume
+class Resume
   attr_reader :myself
 
   def initialize
@@ -11,14 +11,18 @@ class MyResume
 
   def print_resume
     system "clear"
-    puts "#{myself.name}"
-    puts "#{myself.email} | #{myself.phone}"
+    print_my_info
     hr
     puts myself.description
     hr
     myself.pretty_skills
     hr
     myself.pretty_references
+  end
+
+  def print_my_info
+    puts "#{myself.name}"
+    puts "#{myself.email} | #{myself.phone}"
   end
 
   def hr
@@ -28,5 +32,5 @@ class MyResume
   end
 end
 
-my_resume = MyResume.new
-my_resume.print_resume
+resume = Resume.new
+resume.print_resume

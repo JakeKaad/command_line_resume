@@ -6,6 +6,11 @@ This was a project that spun off from a idea I had while listening to people tal
 I thought it would be cool to have a resume that is a command-line application. Because programmers don't
 use Word. They use real text-editors, like notepad. 
 
+If run from a Mac terminal, you can also have mac read your resume using one of [these voices](https://github.com/JakeKaad/command_line_resume)
+
+Ex:  `$ ruby resume.rb whisper`
+
+
 ## Current status
 Right now my own personal information is hardcoded in as a concept. I will move information into a text file to make
 the application customizable. 
@@ -14,5 +19,8 @@ the application customizable.
 * move contact information to text file
 * move skills to text file
 * custom options like text color, emoji support, custom application to run after resume runs. 
+
+
+
 
 

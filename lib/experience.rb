@@ -14,41 +14,40 @@ class Experience
   end
 
   def self.show_off(skill_type, voice)
-    case skill_type
-    when :languages
-      print "These are the languages I know: "
-      Talks.say "These are the languages I know: ", voice: voice if voice
-    when :frameworks
-      print "I can use those on these: "
-      Talks.say "I can use those on these: ", voice: voice if voice
-    when :testing_libraries
-      print "I can test those using these: "
-      Talks.say "I can test those using these: ", voice: voice if voice
-    when :web_development
-      print "I also know a bit about: "
-      Talks.say "I also know a bit about: ", voice: voice if voice
-    when :patterns_and_methodology
-      print "These are some methodologies I enjoy practicing: "
-      Talks.say "These are some methodologies I enjoy practicing: ", voice: voice if voice
-    when :templating
-      print "I can use these for user interfaces: "
-      Talks.say "I can use these for user interfaces: ", voice: voice if voice
-    when :other_relevant_skills
-      print "Here is some other stuff I think I'm pretty goood at: "
-      Talks.say "Here is some other stuff I think I\'m pretty goood at: ", voice: voice if voice
-    end
+    message = get_message_based_on_skill(skill_type)
+    print message
+    Talks.say message, voice: voice if voice
     SKILLS[skill_type].each { |skill| slow_print(skill, skill_type, voice) }
     print "\n"
   end
 
   def self.slow_print(skill, skill_type, voice)
     if SKILLS[skill_type].last == skill
-      sleep 1
       print skill
     else
-      sleep 1
       print "#{skill}, "
     end
     Talks.say skill, voice: voice if voice
   end
+
+  private
+
+    def self.get_message_based_on_skill(skill_type)
+      case skill_type
+      when :languages
+        "These are the languages I know: "
+      when :frameworks
+        "I can use those on these: "
+      when :testing_libraries
+        "I can test those using these: "
+      when :web_development
+        "I also know a bit about: "
+      when :patterns_and_methodology
+        "These are some methodologies I enjoy practicing: "
+      when :templating
+        "I can use these for user interfaces: "
+      when :other_relevant_skills
+        "Here is some other stuff I think I am pretty goood at: "
+      end
+    end
 end

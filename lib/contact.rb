@@ -17,7 +17,6 @@ class Contact
     puts description
     Talks.say name + " " + job + " " + description, voice: voice if voice
     print CONTACTS.values.last[:name] == name ? "" : "\n"
-    sleep 1
   end
 
   def self.get_contacts

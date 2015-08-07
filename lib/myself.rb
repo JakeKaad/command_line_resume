@@ -10,13 +10,18 @@ class Myself
     @references = Contact.get_contacts
   end
 
+
   def pretty_skills(voice)
+    Talks.say "Skills", voice: voice if voice
     @experience.skills.keys.each do |skill_type|
       Experience.show_off(skill_type, voice)
     end
   end
 
+
+
   def pretty_references(voice)
+    Talks.say "References", voice: voice if voice
     references.each do |reference|
       reference.display(voice)
     end
